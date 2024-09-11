@@ -8,7 +8,7 @@ movies = pd.DataFrame(movies_dict)
 similarity = pickle.load(open('similarity.pkl','rb'))
 
 def fetch_posters(movie_id):
-    response=requests.get('https://api.themoviedb.org/3/movie/{}?api_key=827a1079ced8f82daddaea6f59ac0a0c&language=en-US'.format(movie_id))
+    response=requests.get('https://api.themoviedb.org/3/movie/{}?api_key=<your_api_key>&language=en-US'.format(movie_id))
     data = response.json()
     return 'http://image.tmdb.org/t/p/w500/'+data['poster_path']
 
